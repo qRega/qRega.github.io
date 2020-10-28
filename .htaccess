@@ -1,7 +1,3 @@
 RewriteEngine On
-RewriteCond %{HTTPS} !on
-RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI}
-
-RewriteEngine On
-RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^http://rega.fun/u$ [NC]
+RewriteRule ^(.*)$ https://rega.fun/$1 [L,R=301]
